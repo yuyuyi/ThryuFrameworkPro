@@ -6,6 +6,12 @@
 
 将 `Assets/Scripts/ThryuFrameworkPro` 文件夹复制到您的Unity项目中。
 
+在Unity PackageManager中，添加以下官方组件
+- Newtonsoft Json
+- Addressables
+
+如果你使用Rider ide，则请在Rider的Nuget中添加Newtonsoft Json引用
+
 目前包含的功能：
 
 rpg的属性管理器
@@ -22,4 +28,5 @@ ui管理
 特效池
 网络管理
 其他unity拓展
+
 
