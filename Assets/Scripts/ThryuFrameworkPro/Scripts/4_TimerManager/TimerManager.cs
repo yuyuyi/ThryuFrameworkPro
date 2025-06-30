@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* 基础框架版本更新说明：
+ * 2025/6/30 羽于翼：初始版本
+ *
+ */
 namespace ThryuFrameworkPro
 {
     /// <summary>

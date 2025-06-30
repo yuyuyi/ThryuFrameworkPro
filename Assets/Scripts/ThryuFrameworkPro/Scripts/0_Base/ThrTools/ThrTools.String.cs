@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 namespace ThryuFrameworkPro
@@ -295,6 +296,57 @@ namespace ThryuFrameworkPro
             return sb.ToString();
         }
         
+        #endregion
+
+        #region Format
+
+        /// <summary>
+        /// 文本工具类
+        /// </summary>
+        public static class Text
+        {
+            [ThreadStatic]
+            private static StringBuilder s_CachedStringBuilder = null;
+
+            /// <summary>
+            /// 获取缓存的字符串构建器
+            /// </summary>
+            /// <returns>字符串构建器</returns>
+            public static StringBuilder GetCachedStringBuilder()
+            {
+                if (s_CachedStringBuilder == null)
+                {
+                    s_CachedStringBuilder = new StringBuilder(1024);
+                }
+
+                s_CachedStringBuilder.Length = 0;
+                return s_CachedStringBuilder;
+            }
+
+            /// <summary>
+            /// 格式化字符串
+            /// </summary>
+            /// <param name="format">格式字符串</param>
+            /// <param name="args">参数</param>
+            /// <returns>格式化后的字符串</returns>
+            public static string Format(string format, params object[] args)
+            {
+                if (format == null)
+                {
+                    throw new ArgumentNullException("Format is invalid.");
+                }
+
+                if (args == null)
+                {
+                    throw new ArgumentNullException("Args is invalid.");
+                }
+
+                StringBuilder stringBuilder = GetCachedStringBuilder();
+                stringBuilder.AppendFormat(format, args);
+                return stringBuilder.ToString();
+            }
+        }
+
         #endregion
     }
 }
