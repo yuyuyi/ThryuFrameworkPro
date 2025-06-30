@@ -13,11 +13,6 @@ namespace ThryuFrameworkPro
         
         [LabelText("日志过滤级别")]
         public LogLevel LogLevelFilter = LogLevel.Info;
-
-        public void Start()
-        {
-            Log.Info("测试");
-        }
     }
 }
 
