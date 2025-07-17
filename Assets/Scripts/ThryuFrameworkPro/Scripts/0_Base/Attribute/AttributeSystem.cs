@@ -63,8 +63,8 @@ namespace ThryuFrameworkPro
     {
         [LabelText("装备")]
         Equipment,
-        [LabelText("技能")]
-        Skill,
+        [LabelText("被动技能")]
+        PassiveSkill,
         [LabelText("Buff")]
         Buff,
         
@@ -83,10 +83,65 @@ namespace ThryuFrameworkPro
     {
         最大生命值,
         最大魔法值,
-        攻击力,
-        防御力,
         
-        //其他属性可以在这里添加
+        破坏因子,
+        反射因子,
+        体质因子,
+        能量因子,
+        精神因子,
+        
+        生命恢复,
+        魔法恢复,
+        
+        斩击增伤,
+        穿刺增伤,
+        钝器增伤,
+        
+        科技增伤,
+        
+        奥术增伤,
+        火增伤,
+        雷增伤,
+        毒增伤,
+        混乱增伤,
+        神圣增伤,
+        
+        物理增伤,
+        魔法增伤,
+        
+        最终增伤,
+        
+        暴击率,
+        暴击伤害,
+        
+        魔法暴击率,
+        魔法暴击伤害,
+        
+        召唤强度,
+        
+        //抗性
+        斩击抗性,
+        穿刺抗性,
+        钝器抗性,
+        
+        科技抗性,
+        
+        奥术抗性,
+        火抗性,
+        雷抗性,
+        毒抗性,
+        混乱抗性,
+        神圣抗性,
+        
+        物理减伤,
+        魔法减伤,
+        最终减伤,
+        
+        移动速度,
+        攻击动作速度,
+        施法动作速度,
+        换弹速度,
+        射速提升,
         
         // 用于标识长度，不允许参与计算和使用
         [LabelText("禁用-长度标识")]
@@ -116,6 +171,7 @@ namespace ThryuFrameworkPro
     /// <summary>
     /// 属性修饰符类
     /// </summary>
+    [Serializable]
     public class AttributeModifier
     {
         [LabelText("数值")]
@@ -137,6 +193,16 @@ namespace ThryuFrameworkPro
             AttributeType = _attributeType;
             MultiplierType = _multiplierType;
         }
+    }
+
+    [Serializable]
+    public class AttributeAdd
+    {
+        [LabelText("属性类型")]
+        public AttributeEnum m_type;
+        
+        [LabelText("属性")]
+        public AttributeModifier modifier;
     }
 
     /// <summary>
